@@ -1,22 +1,17 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra
 
-```makefile
-CC = gcc
-CFLAGS = -Wall -Wextra -g
+TARGETS = oss worker
 
-all: oss worker
+all: $(TARGETS)
 
-oss: oss.o
-	$(CC) $(CFLAGS) -o oss oss.o
+oss: oss.cpp
+	$(CXX) $(CXXFLAGS) -o oss oss.cpp
 
-worker: worker.o
-	$(CC) $(CFLAGS) -o worker worker.o
-
-oss.o: oss.c
-	$(CC) $(CFLAGS) -c oss.c
-
-worker.o: worker.c
-	$(CC) $(CFLAGS) -c worker.c
+worker: worker.cpp
+	$(CXX) $(CXXFLAGS) -o worker worker.cpp
 
 clean:
-	rm -f oss worker *.o
-```
+	rm -f $(TARGETS)
+
+.PHONY: all clean

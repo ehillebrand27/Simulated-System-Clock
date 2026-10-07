@@ -1,0 +1,25 @@
+
+
+Name: Ethan Hillebrand
+Date: September 30, 2026
+Environment: Linux, Visual Studio Code, vim
+
+How to compile the project:
+Type 'make'
+
+Example of how to run the project:
+./oss -n 3 -s 2 -t 4 -i 0.6
+
+Options:
+-n  total number of workers oss will launch
+-s  max number of workers in the system at once (capped at 20)
+-t  max simulated seconds a worker stays (each worker gets a random time up to t)
+-i  minimum simulated seconds between launching workers 
+
+Generative AI used: Claude, ChatGPT
+Prompts:
+Break this project down into milestones
+How do i work with shared memory in c++
+Help me implement the -i case
+Help me debug this code
+
